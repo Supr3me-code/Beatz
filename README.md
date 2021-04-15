@@ -1,6 +1,6 @@
 # Beatz
-
-A new Flutter application.
+Music app
+A cross-platform app that extracts app .mp3 files in the device and becomes the super audio app.
 
 ## Getting Started
 
