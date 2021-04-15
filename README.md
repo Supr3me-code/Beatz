@@ -2,7 +2,7 @@
 Music app
 A cross-platform app that extracts app .mp3 files in the device and becomes the super audio app.
 
-##packages used:
+## Packages used:
 audioplayers: ^0.18.3  
 path: ^1.8.0  
 path_provider: ^2.0.1  
