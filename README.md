@@ -1,4 +1,4 @@
-# beatz_2
+# Beatz
 
 A new Flutter application.
 
