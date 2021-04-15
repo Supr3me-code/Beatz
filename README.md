@@ -1,5 +1,10 @@
 # Beatz
-Music app
+Music app  
+
+<img src="ReadMe/headphone.png">  
+
+
+  
 A cross-platform app that extracts app .mp3 files in the device and becomes the super audio app.
 
 ## Packages used:
@@ -10,7 +15,8 @@ flutter_file_manager: ^0.2.0
 path_provider_ex: ^1.0.1
 
 ## Screenshots
-![](Screenshot_2021-04-15-18-56-32-029_com.beatz_2.jpg)
+<img src="ReadMe/Screenshot_2021-04-15-18-56-32-029_com.beatz_2.jpg" width=200 height=400>      <img src="ReadMe/Screenshot_2021-04-15-18-56-40-916_com.beatz_2.jpg" width=200 height=400>
+
 
 ## Getting Started
 
