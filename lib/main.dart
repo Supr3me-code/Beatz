@@ -10,7 +10,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -29,20 +29,20 @@ class ChooseTrack extends StatefulWidget {
 class _ChooseTrackState extends State<ChooseTrack> {
   var files;
 
-  void getFiles() async { //asyn function to get list of files
+  void getFiles() async { 
     List<StorageInfo> storageInfo = await PathProviderEx.getStorageInfo();
-    var root = storageInfo[0].rootDir; //storageInfo[1] for SD card, geting the root directory
-    var fm = FileManager(root: Directory(root)); //
+    var root = storageInfo[0].rootDir; 
+    var fm = FileManager(root: Directory(root)); 
     files = await fm.filesTree(
         excludedPaths: ["/storage/emulated/0/Android"],
-        extensions: ["mp3"] //optional, to filter files, list only mp3 files
+        extensions: ["mp3"] 
     );
-    setState(() {}); //update the UI
+    setState(() {}); 
   }
 
   @override
   void initState() {
-    getFiles(); //call getFiles() function on initial state.
+    getFiles();
     super.initState();
   }
 
@@ -56,7 +56,7 @@ class _ChooseTrackState extends State<ChooseTrack> {
         body:files == null? Container(color: Colors.black,child: Center(child: Text("No Files Found",style: TextStyle(color: Colors.white)))):
         Container(
           color: Colors.black,
-          child: ListView.builder(  //if file/folder list is grabbed, then show here
+          child: ListView.builder( 
             itemCount: files?.length ?? 0,
             itemBuilder: (context, index) {
               return Card(
@@ -67,7 +67,7 @@ class _ChooseTrackState extends State<ChooseTrack> {
                     trailing: Icon(Icons.play_arrow, color: Colors.black,),
                     onTap: (){
 
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => MusicApp(song: files[index])));                      // you can add Play/push code over here
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => MusicApp(song: files[index])));                    
                     },
                   )
               );
