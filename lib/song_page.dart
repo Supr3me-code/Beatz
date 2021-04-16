@@ -17,19 +17,17 @@ class _MusicAppState extends State<MusicApp> {
 
   var song;
   _MusicAppState(this.song);
-  //we will need some variables
-  bool playing = false; // at the begining we are not playing any song
-  IconData playBtn = Icons.play_arrow; // the main state of the play button icon
 
-  //Now let's start by creating our music player
-  //first let's declare some object
+  bool playing = false;
+  IconData playBtn = Icons.play_arrow; 
+
   AudioPlayer _player;
   AudioCache cache;
 
   Duration position = new Duration();
   Duration musicLength = new Duration();
 
-  //we will create a custom slider
+
 
   Widget slider() {
     return Container(
@@ -45,7 +43,7 @@ class _MusicAppState extends State<MusicApp> {
     );
   }
 
-  //let's create the seek function that will allow us to go to a certain position of the music
+
   void seekToSec(int sec) {
     Duration newPos = Duration(seconds: sec);
     _player.seek(newPos);
@@ -58,16 +56,14 @@ class _MusicAppState extends State<MusicApp> {
     _player = AudioPlayer();
     cache = AudioCache(fixedPlayer: _player);
 
-    //now let's handle the audioplayer time
-
-    //this function will allow you to get the music duration
+   
     // _player.durationHandler = (d) {
     //   setState(() {
     //     musicLength = d;
     //   });
     // };
     //
-    // //this function will allow us to move the cursor of the slider while we are playing the song
+    // 
     // _player.positionHandler = (p) {
     //   setState(() {
     //     position = p;
@@ -81,7 +77,7 @@ class _MusicAppState extends State<MusicApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //let's start by creating the main UI of the app
+    
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -102,7 +98,7 @@ class _MusicAppState extends State<MusicApp> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                //Let's add some text title
+              
                 Padding(
                   padding: const EdgeInsets.only(left: 12.0),
                   child: Text(
@@ -128,7 +124,7 @@ class _MusicAppState extends State<MusicApp> {
                 SizedBox(
                   height: 24.0,
                 ),
-                //Let's add the music cover
+              
                 Center(
                   child: Container(
                     width: 280.0,
@@ -173,9 +169,7 @@ class _MusicAppState extends State<MusicApp> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        //Let's start by adding the controller
-                        //let's add the time indicator text
-
+                        
                         Container(
                           width: 500.0,
                           child: Row(
@@ -221,13 +215,10 @@ class _MusicAppState extends State<MusicApp> {
                               iconSize: 62.0,
                               color: Colors.deepOrange,
                               onPressed: () {
+                                          ////////////////////////////////////////////
 
-                                  // _player.play(song);                                           ////////////////////////////////////////////
-
-                                // here we will add the functionality of the play button
                                 if (!playing) {
-                                  //now let's play the song
-                                  // cache.play("track1.mp3");
+                                  
                                   _player.play(playSong(song), isLocal: true);
                                   setState(() {
                                     playBtn = Icons.pause;
