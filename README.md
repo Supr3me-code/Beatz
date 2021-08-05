@@ -1,5 +1,5 @@
 # Beatz
-Music app  
+Music app   
 
 <img src="ReadMe/headphone.png">  
 
